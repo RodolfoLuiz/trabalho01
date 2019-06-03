@@ -39,10 +39,8 @@ https://balsamiq.cloud/siram81/pyreqhz
 
 
 
-#### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-    
+#### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO? 
+
 > A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
 + Relatório de clientes incluindo as seguintes informações: rg do cliente, nome do cliente, data de nascimento do cliente, sexo do cliente e cpf do cliente; 
 + Relatório que informe qual a media de idade dos clientes com as seguintes informações: media das idades dos clientes;
@@ -52,10 +50,6 @@ https://balsamiq.cloud/siram81/pyreqhz
 
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-    e deve ser criada antes do modelo conceitual
-    c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
     
 ![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
 
