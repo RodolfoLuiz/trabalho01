@@ -1,4 +1,4 @@
-# TRABALHO 01:  Título do Trabalho
+# TRABALHO 01:  ANTI-FIRE DETECTOR
 Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
 # Sumário
@@ -18,19 +18,17 @@ A inspiração foi dada pelos recentes acontecimentos registrados de vários cas
 Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas ao redor do país.
  
 
-### 3.MINI-MUNDO Novo<br>
+### 3.MINI-MUNDO <br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
-Entrevista com o usuário e identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
+Descrever o mini-mundo! <br>
+Identificação dos requisitos.<br>
+Descrição textual das regras de negócio definidas como um subconjunto do mundo real cujos elementos são propriedades que desejamos incluir, processar, armazenar, gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 
 > Para o projeto será armazenado detalhadamente todos os tipos de materiais inflamáveis, e suas respectivas temperaturas críticas. 
 	Serão cuidadosamente detectadas através de sensores de temperaturas sendo que, quando registrar alguma situação crítica ou desfavorável, automaticamente acionará o sistema e comunicará os bombeiros.
-	 No site do projeto, você poderá se cadastrar completando algumas informações pessoais, informações sobre seu imóvel, como a quantidade de cômodos e sua funcionalidade (residencial ou comercial) e sua localização(para facilitar a manutenção).
+	No site do projeto, você poderá se cadastrar completando algumas informações pessoais, informações sobre seu imóvel, como a quantidade de cômodos e sua funcionalidade (residencial ou comercial) e sua localização(para facilitar a manutenção).
 		
-Sensor de Chama–Arduíno: pode 	verificar a presença de  fogo ou fontes de calor por meio de um sensor IR 
+Sensor de Chama–Arduíno: pode verificar a presença de fogo ou fontes de calor por meio de um sensor IR.
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -51,8 +49,7 @@ https://balsamiq.cloud/siram81/pyreqhz
 + Relatório de tipo de imóveis que mais ocorrem incêndios incluindo as seguintes informações:  tipo do imóvel, numero de comodos e quantidade de vezes que o sistema é acionado;
 + Relatório dos pacotes mais comprados incluindo: tipo do imóvel, numero de comodos, valor do pacote, pacote mais comprado;
 + Relatório do estado onde mais é vendido: estado com mais clientes, numero de clientes.
- 
-## Marco de Entrega 03 em: (13/05/2019)<br>
+
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
@@ -63,8 +60,6 @@ https://balsamiq.cloud/siram81/pyreqhz
 ![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
 
     
-## Marco de Entrega 04 em: (15/05/2019)<br>
-
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
         * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
@@ -84,7 +79,6 @@ https://balsamiq.cloud/siram81/pyreqhz
     [Grupo01]: [Nomes dos que participaram na avaliação]
     [Grupo02]: [Nomes dos que participaram na avaliação]
     
-## Marco de Entrega 05 em: (20/05/2019)<br>
 
 #### 5.2 DESCRIÇÃO DOS DADOS 
     [objeto]: [descrição do objeto]
@@ -93,7 +87,6 @@ https://balsamiq.cloud/siram81/pyreqhz
     CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
     CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
 
-## Marco de Entrega 06 em: (22/05/2019)<br>
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
@@ -104,7 +97,6 @@ https://balsamiq.cloud/siram81/pyreqhz
         a) inclusão das instruções de criacão das estruturas DDL 
         (criação de tabelas, alterações, etc..)          
 
-## Marco de Entrega 07 em: (27/05/2019)<br>
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
@@ -124,7 +116,6 @@ https://balsamiq.cloud/siram81/pyreqhz
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
 
-## Marco de Entrega 08 em: (29/05/2019)<br>
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
