@@ -45,12 +45,12 @@ https://balsamiq.cloud/siram81/pyreqhz
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que informe quais são os gerentes de cada departamento incluindo as seguintes informações: número do departamento,  nome do departamento, e nome do gerente.
-* Relatório de empregados por projeto incluindo as seguintes informações: número do projeto, nome do projeto, rg do empregado, nome do empregado e quantidade de horas de trabalho do empregado alocadas ao projeto.
-* Relatório de empregados com dependentes incluindo as seguintes informações: rg do empregado, nome do empregado, nome do dependente, tipo de relação, data de nascimento do dependente e sexo do dependente.
-* Relatório com a quantidade de empregados por cada departamento incluindo as seguintes informações: nome do departamento, supervisor e quantidade de empregados alocados no departamento.
-* Relatório de supervisores e supervisionados incluindo as seguintes informações: nome do supervisor e nome do supervisionado.
+> A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
++ Relatório de clientes incluindo as seguintes informações: rg do cliente, nome do cliente, data de nascimento do cliente, sexo do cliente e cpf do cliente; 
++ Relatório que informe qual a media de idade dos clientes com as seguintes informações: media das idades dos clientes;
++ Relatório de tipo de imóveis que mais ocorrem incêndios incluindo as seguintes informações:  tipo do imóvel, numero de comodos e quantidade de vezes que o sistema é acionado;
++ Relatório dos pacotes mais comprados incluindo: tipo do imóvel, numero de comodos, valor do pacote, pacote mais comprado;
++ Relatório do estado onde mais é vendido: estado com mais clientes, numero de clientes.
  
 ## Marco de Entrega 03 em: (13/05/2019)<br>
 
