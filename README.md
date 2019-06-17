@@ -14,7 +14,7 @@ Este documento contém a especificação do projeto do banco de dados <>
 <br>e motivação da escolha realizada. <br>
 
 A empresa "Anti-Fire Company" está disposta a colaborar com projetos, para uma sociedade mais segura. O sistema (ainda em projeto) tem como função, detectar através de sensores, materiais inflamáveis ao nosso redor, e com isso, evitar incêndios  em muitas áreas. 
-A inspiração foi dada pelos recentes acontecimentos registrados de vários casos de fogo e cinzas em diversas áreas da sociedade. 
+A inspiração foi dada pelos recentes acontecimentos registrados de vários incendios que levam cinzas para diversas áreas do mundo. 
 Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas ao redor do país.
  
 
