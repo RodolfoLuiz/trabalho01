@@ -35,7 +35,7 @@ Sensor de Chama–Arduíno: pode verificar a presença de fogo ou fontes de calo
 Neste ponto a codificação não e necessária, somente as ideias de telas devem ser desenvolvidas. O princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas e/ou descartadas <br>
 
 ![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
-https://balsamiq.cloud/siram81/pyreqhz
+https://balsamiq.cloud/siram81/pyreqhz/r2278
 
 
 
