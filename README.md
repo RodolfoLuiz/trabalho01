@@ -46,7 +46,8 @@ Sensor de Chama–Arduíno: pode verificar a presença de fogo ou fontes de calo
 
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
-![Tabela de dados da Empresa Anti-Fire Company] (https://github.com/RodolfoLuiz/trabalho01/blob/master/TabelaEmpresaAnti-FireCompany.xlsx )
+![Tabela de dados da Empresa Anti-Fire Company ](https://github.com/RodolfoLuiz/trabalho01/blob/master/TabelaEmpresaAnti-FireCompany.xlsx )
+
     
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
