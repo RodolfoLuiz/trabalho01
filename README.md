@@ -71,6 +71,7 @@ https://balsamiq.cloud/siram81/pyreqhz/r2278
     
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Rodolfo e Gustavo]
+    [Grupo02]: [Nome dos componentes]
     
     
 
