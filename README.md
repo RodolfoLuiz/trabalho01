@@ -60,7 +60,7 @@ https://balsamiq.cloud/siram81/pyreqhz/r2278
         * O protótipo deve possui no mínimo duas relações N para N
         * o mínimo de entidades do modelo conceitual será igual a 5
         
-![Alt text](https://github.com/discipint/trabalho01/blob/master/imagens/modelo_conceitual_empresa.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20conceitual.png "Modelo Conceitual")
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
