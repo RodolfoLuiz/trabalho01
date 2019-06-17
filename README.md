@@ -20,9 +20,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 
 ### 3.MINI-MUNDO <br>
 
-Descrever o mini-mundo! <br>
-Identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um subconjunto do mundo real cujos elementos são propriedades que desejamos incluir, processar, armazenar, gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
+
 
 > Para o projeto será armazenado detalhadamente todos os tipos de materiais inflamáveis, e suas respectivas temperaturas críticas. 
 	Serão cuidadosamente detectadas através de sensores de temperaturas sendo que, quando registrar alguma situação crítica ou desfavorável, automaticamente acionará o sistema e comunicará os bombeiros.
@@ -32,7 +30,6 @@ Sensor de Chama–Arduíno: pode verificar a presença de fogo ou fontes de calo
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
-Neste ponto a codificação não e necessária, somente as ideias de telas devem ser desenvolvidas. O princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas e/ou descartadas <br>
 
 ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/print%20balsamiq.png "Title")
 https://balsamiq.cloud/siram81/pyreqhz/r2278
@@ -51,7 +48,8 @@ https://balsamiq.cloud/siram81/pyreqhz/r2278
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Tabela de dados da Anti-Fire Company]
+(https://github.com/RodolfoLuiz/trabalho01/blob/master/TabelaEmpresaAnti-FireCompany.xlsx "Tabela -  Anti-Fire Company")
 
     
 ### 5.MODELO CONCEITUAL<br>
