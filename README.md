@@ -5,8 +5,8 @@ Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-Rodolfo: rodolfoliveira99@gmail.com<br>
-Gustavo: gustavo.olmosantana@gmail.com<br>
+Rodolfo Luiz de Oliveira: rodolfoliveira99@gmail.com<br>
+Gustavo Olmo Santana: gustavo.olmosantana@gmail.com<br>
 
 
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
