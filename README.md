@@ -31,7 +31,7 @@ Sensor de Chama–Arduíno: pode verificar a presença de fogo ou fontes de calo
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/print%20balsamiq.png "Title")
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/print%20balsamiq.png "Title"),
 https://balsamiq.cloud/siram81/pyreqhz/r2278
 
 
@@ -48,9 +48,8 @@ https://balsamiq.cloud/siram81/pyreqhz/r2278
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     
-![Tabela de dados da Anti-Fire Company]
-(https://github.com/RodolfoLuiz/trabalho01/blob/master/TabelaEmpresaAnti-FireCompany.xlsx "Tabela -  Anti-Fire Company")
-
+Link da tabela -  Anti-Fire Company
+https://github.com/RodolfoLuiz/trabalho01/blob/master/TabelaEmpresaAnti-FireCompany.xlsx 
     
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
