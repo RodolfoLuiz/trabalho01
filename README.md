@@ -36,7 +36,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 
 > A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
 + Relatório de clientes incluindo as seguintes informações: rg do cliente, nome do cliente, data de nascimento do cliente, sexo do cliente e cpf do cliente; 
-+ Relatório que informe qual a media de idade dos clientes com as seguintes informações: media das idades dos clientes;
++ Relatório de Incidentes ocorridos no mês: A categoria dos incidentes, a data, o imovel em que ocorreu ;
 + Relatório de tipo de imóveis que mais ocorrem incêndios incluindo as seguintes informações:  tipo do imóvel, numero de comodos e quantidade de vezes que o sistema é acionado;
 + Relatório dos pacotes mais comprados incluindo: tipo do imóvel, numero de comodos, valor do pacote, pacote mais comprado;
 + Relatório do estado onde mais é vendido: estado com mais clientes, numero de clientes.
