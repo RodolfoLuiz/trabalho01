@@ -22,11 +22,8 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 
 
 
-> Para o projeto será armazenado detalhadamente todos os tipos de materiais inflamáveis, e suas respectivas temperaturas críticas. 
-	Serão cuidadosamente detectadas através de sensores de temperaturas sendo que, quando registrar alguma situação crítica ou desfavorável, automaticamente acionará o sistema e comunicará os bombeiros.
-	No site do projeto, você poderá se cadastrar completando algumas informações pessoais, informações sobre seu imóvel, como a quantidade de cômodos e sua funcionalidade (residencial ou comercial) e sua localização(para facilitar a manutenção).
-		
-Sensor de Chama–Arduíno: pode verificar a presença de fogo ou fontes de calor por meio de um sensor IR.
+> O projeto armazenará detalhadamente todos os tipos de incidentes (ex.: incendios, vazamentos de gás, etc) e suas respectivas informações (ex.: hórario, data, temperatura, umidade ). Serão cuidadosamente detectadas através de sensores (de temperatura, umidade, gases dispersos no ambiente) que quando registrar alguma situação crítica ou desfavorável, automaticamente acionará o sistema e comunicará os bombeiros, além de armazenar no sistema as informações do incidente, anteriormente citados. No site do projeto, você (cliente) poderá se cadastrar inserindo algumas informações pessoais(ex.: nome, cpf, rg, telefone, e-mail, data de nascimento), informações sobre seu imóvel, como a quantidade de cômodos e sua funcionalidade (residencial ou comercial) e seu endereço (para solicitar intalação e posteriormente uma manutenção), após a instalação tambem será armazenada a data de instalação.
+
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
