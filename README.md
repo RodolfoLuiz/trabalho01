@@ -62,8 +62,8 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Rodolfo e Gustavo]
-    [Grupo02]: [Nome dos componentes]
+    [Grupo01]: [Calebe Carias e Davi Moura]
+    [Grupo02]: []
     
     
 
