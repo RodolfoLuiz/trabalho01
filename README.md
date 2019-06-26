@@ -50,7 +50,6 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
     A) NOTACAO ENTIDADE RELACIONAMENTO 
         * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
         * O protótipo deve possui no mínimo duas relações N para N
-        * o mínimo de entidades do modelo conceitual será igual a 5
         
 ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20conceitual%20final%2026.png)
     
@@ -76,13 +75,10 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do modelo lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+       ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico%20final.png)
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
+       ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20fisico%20print.png)       
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
