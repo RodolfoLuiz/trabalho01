@@ -52,7 +52,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         * O protótipo deve possui no mínimo duas relações N para N
         * o mínimo de entidades do modelo conceitual será igual a 5
         
-![Alt text]https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico.png
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico.png)
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
