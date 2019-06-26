@@ -63,7 +63,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
     
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Calebe Carias e Davi Moura]
-    [Grupo02]: []
+    [Grupo02]: [Júlia Suzano e Beatriz Auer]
     
     
 
