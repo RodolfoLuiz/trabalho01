@@ -67,13 +67,29 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
     
 
 #### 5.2 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-
-
+CLIENTE: Tabela que armazena as informações referentes aos clientes.<br>
+NOME: Campo que armazena o nome de cada cliente da empresa.<br>
+E-MAIL: Campo que armazena o e-mail dos clientes.<br>
+TELEFONE:  Campo que armazena o telefone de contato dos clientes.<br>
+RG: Campo que armazena o Registro Geral dos clientes.<br>
+CPF: Campo que armazena o número de Cadastro de Pessoa Física de cada cliente da empresa.<br>
+DATA_NASC: Campo que armazena a data de nascimento dos clientes.<br>
+IMOVEL: Tabela que armazena as informações referentes aos imóveis cadastrados pelos clientes.<br>
+CODIGO: Campo que armazena o código identificador de cada imóvel cadastrado. <br>
+ENDERECO:  Campo que armazena as informações relativas a localização, endereço de cada imóvel cadastrado.<br>
+TIPO: Campo que armazena o tipo do imóvel cadastrado. Por exemplo: Comercial, Residencial, Industrial. <br>
+NUM_COMODOS: Campo que armazena o número de cômodos existentes em cada imóvel.<br>
+PRECO_PACOTE: Campo que armazena o preço do pacote, escolhido pelo cliente, para determinado imóvel.<br>
+DATA_INSTALACAO: Campo que armazena a data em que ocorreu a instalação no imóvel. Este dado não é inserido/definido pelo usuário.<br>
+DATA_MANUTENCAO: Campo que armazena a data da última manutenção realizada no imóvel. <br>
+SENSORES: Tabela que armazena as informações, fornecidas pelos sensores, referentes aos incidentes (Ex.: Incedio, Vazamento de gás, etc) ocorridos em cada um dos imóveis cadastrados.<br>
+DATA: Campo que armazena a data dos incidentes.<br>
+TEMPERATURA: Campo que armazena a temperatura máxima registrada pelos sensores durante o incidente.<br>
+HORA:  Campo que armazena o horário em que os sensores foram acionados, e detectaram o incidente.<br>
+CATEGORIA: Campo que armazena a categoria/tipo do incidente(Ex.: Incedio, Vazamento de gás, etc).<br>
+UMIDADE: Campo que armazena a umidade registrada pelos sensores durante o incidente.<br>
+CODIGO: Campo que armazena o código identificador dos sensores, que é o mesmo código do imóvel ao qual estes sensores pertencem.<br>
+ 
 ### 6	MODELO LÓGICO<br>
   ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico%20final.png)
 
