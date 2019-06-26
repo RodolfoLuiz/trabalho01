@@ -75,10 +75,10 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 
 
 ### 6	MODELO LÓGICO<br>
-       ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico%20final.png)
+  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico%20final.png)
 
 ### 7	MODELO FÍSICO<br>
-       ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20fisico%20print.png)       
+  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20fisico%20print.png)       
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
