@@ -100,23 +100,30 @@ CODIGO: Campo que armazena o código identificador dos sensores, que é o mesmo 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
         
+
 insert into Cliente(nome, cpf, rg, telefone, email, data_nasc)
+
 values('Jobiscleiton', '111222333-00', '11 111 111-1', '1111-1111', 'jobis@gmail.com', '01-01-1950'),
-      ('Gustavo', '111222333-01',  '22 222 222-2', '2222-2222', 'gustavo@gmail.com', '02-02-1987'),
-      ('Calebe', '111222333-02', '33 333 333-3', '3333-3333', 'cabele@hotmail.com', '10-02-1981'),
-      ('Pedro', '111222333-03', '44 444 444-4', '4444-4444', 'pedro@gmail.com', '19-02-1976');      
+('Gustavo', '111222333-01',  '22 222 222-2', '2222-2222', 'gustavo@gmail.com', '02-02-1987'),
+('Calebe', '111222333-02', '33 333 333-3', '3333-3333', 'cabele@hotmail.com', '10-02-1981'),
+('Pedro', '111222333-03', '44 444 444-4', '4444-4444', 'pedro@gmail.com', '19-02-1976');      
 	   
+
 insert into Imovel(tipo, num_comodos, data_instalacao, data_manutencao, endereco, preco_pacote, codigo)
+
 values ('Industrial', 3, '1-1-2019', '1-2-2019','ES-Serra- Rua 1A- Nº31',  '400',110),
-       ('Residencial',4, '2-2-2019', '2-3-2019','ES-Serra- Rua 1B- Nº45',  '300',220),
-       ('Comercial',  5, '3-3-2019', '3-4-2019','ES-Serra- Rua 5F- Nº86',  '600',330),
-       ('Comercial',  4, '4-4-2019', '4-5-2019','ES-Vitória- Rua 6A- Nº49','600',440);
+('Residencial',4, '2-2-2019', '2-3-2019','ES-Serra- Rua 1B- Nº45',  '300',220),
+('Comercial',  5, '3-3-2019', '3-4-2019','ES-Serra- Rua 5F- Nº86',  '600',330),
+('Comercial',  4, '4-4-2019', '4-5-2019','ES-Vitória- Rua 6A- Nº49','600',440);
+
 
 insert into Sensores(data, temperatura, hora, categoria, umidade, codigo)
+
 values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110),
-      ('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220),
-      ('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330),
-      ('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440);
+('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220),
+('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330),
+('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440);
+
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
 create table Cliente(nome varchar(40), cpf varchar(25), rg varchar(25) PRIMARY KEY,telefone varchar(15), email varchar(40), data_nasc date);
