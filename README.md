@@ -88,7 +88,7 @@ TEMPERATURA: Campo que armazena a temperatura máxima registrada pelos sensores 
 HORA:  Campo que armazena o horário em que os sensores foram acionados, e detectaram o incidente.<br>
 CATEGORIA: Campo que armazena a categoria/tipo do incidente(Ex.: Incedio, Vazamento de gás, etc).<br>
 UMIDADE: Campo que armazena a umidade registrada pelos sensores durante o incidente.<br>
-CODIGO: Campo que armazena o código identificador dos sensores, que é o mesmo código do imóvel ao qual estes sensores pertencem.<br>
+ID: Campo que armazena o identificador dos sensores.<br>
  
 ### 6	MODELO LÓGICO<br>
   ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/mais%C3%A9logico.png)
@@ -130,11 +130,13 @@ create table Cliente(nome varchar(40), cpf varchar(25), rg varchar(25) PRIMARY K
 
 create table cliente_imovel(Cliente_rg varchar(40), codigo_imovel varchar(40);
 
-create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote float, codigo integer PRIMARY KEY);
+create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote varchar(40), codigo varchar(40) PRIMARY KEY);
 
-create table Sensores (data date, temperatura varchar(5), hora varchar(10), categoria varchar(40), umidade varchar(5), codigo integer PRIMARY KEY);
+create table Sensores (data date, temperatura float, hora time, categoria varchar(40), umidade float, cod_imovel varchar(40) PRIMARY KEY, id varchar(30));
 
 select * from Cliente
+
+select * from cliente_imovel
 
 select * from Imovel
 
@@ -149,11 +151,15 @@ drop table Imovel
 
 drop table Sensores
 
+drop table cliente_imovel
+
 create table Cliente(nome varchar(40), cpf varchar(25), rg varchar(25) PRIMARY KEY,telefone varchar(15), email varchar(40), data_nasc date);
 
-create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote float, codigo integer PRIMARY KEY);
+create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote varchar(40), cod_imovel varchar(40) PRIMARY KEY);
 
-create table Sensores (data date, temperatura varchar(5), hora varchar(10), categoria varchar(40), umidade varchar(5), codigo integer PRIMARY KEY);	
+create table Sensores (data date, temperatura float, hora time, categoria varchar(40), umidade float, cod_imovel varchar(40) PRIMARY KEY, id varchar(30));
+
+create table cliente_imovel(Cliente_rg varchar(40), codigo_imovel varchar(40);
 
 
 insert into Cliente(nome, cpf, rg, telefone, email, data_nasc)
@@ -164,7 +170,7 @@ values('Jobiscleiton', '111222333-00', '11 111 111-1', '1111-1111', 'jobis@gmail
       ('Pedro', '111222333-03', '44 444 444-4', '4444-4444', 'pedro@gmail.com', '19-02-1976');      
 	   
 
-insert into Imovel(tipo, num_comodos, data_instalacao, data_manutencao, endereco, preco_pacote, codigo)
+insert into Imovel(tipo, num_comodos, data_instalacao, data_manutencao, endereco, preco_pacote, cod_imovel)
 
 values ('Industrial', 3, '1-1-2019', '1-2-2019','ES-Serra- Rua 1A- Nº31',  '400',110),
        ('Residencial',4, '2-2-2019', '2-3-2019','ES-Serra- Rua 1B- Nº45',  '300',220),
@@ -172,17 +178,19 @@ values ('Industrial', 3, '1-1-2019', '1-2-2019','ES-Serra- Rua 1A- Nº31',  '400
        ('Comercial',  4, '4-4-2019', '4-5-2019','ES-Vitória- Rua 6A- Nº49','600',440);
 
 
-insert into Sensores(data, temperatura, hora, categoria, umidade, codigo)
+insert into Sensores(data, temperatura, hora, categoria, umidade, cod_imovel, id)
 
-values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110),
-      ('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220),
-      ('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330),
-      ('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440);
+values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110, 120S),
+      ('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220, 230S),
+      ('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330, 340S),
+      ('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440, 450S);
 	  
 select * from Cliente
 
 select * from Imovel																														 
 select * from Sensores
+
+select * from cliente_imovel
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
