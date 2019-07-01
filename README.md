@@ -51,7 +51,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
         * O protótipo deve possui no mínimo duas relações N para N
         
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20conceitual%20final%2026.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/aquitemconceito.png)
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
@@ -91,10 +91,10 @@ UMIDADE: Campo que armazena a umidade registrada pelos sensores durante o incide
 CODIGO: Campo que armazena o código identificador dos sensores, que é o mesmo código do imóvel ao qual estes sensores pertencem.<br>
  
 ### 6	MODELO LÓGICO<br>
-  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20l%C3%B3gico%20final.png)
+  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/mais%C3%A9logico.png)
 
 ### 7	MODELO FÍSICO<br>
-  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20fisico%20print.png)       
+  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/fisicodms.png)       
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
