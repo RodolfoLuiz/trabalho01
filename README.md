@@ -128,6 +128,8 @@ values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110),
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
 create table Cliente(nome varchar(40), cpf varchar(25), rg varchar(25) PRIMARY KEY,telefone varchar(15), email varchar(40), data_nasc date);
 
+create table cliente_imovel(Cliente_rg varchar(40), codigo_imovel varchar(40);
+
 create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote float, codigo integer PRIMARY KEY);
 
 create table Sensores (data date, temperatura varchar(5), hora varchar(10), categoria varchar(40), umidade varchar(5), codigo integer PRIMARY KEY);
