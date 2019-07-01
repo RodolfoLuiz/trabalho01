@@ -117,12 +117,13 @@ values ('Industrial', 3, '1-1-2019', '1-2-2019','ES-Serra- Rua 1A- Nº31',  '400
 ('Comercial',  4, '4-4-2019', '4-5-2019','ES-Vitória- Rua 6A- Nº49','600',440);
 
 
-insert into Sensores(data, temperatura, hora, categoria, umidade, codigo)
+insert into Sensores(data, temperatura, hora, categoria, umidade, cod_imovel, id)
 
-values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110),
-('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220),
-('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330),
-('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440);
+values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110, 120S),
+      ('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220, 230S),
+      ('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330, 340S),
+      ('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440, 450S);
+	  
 
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
