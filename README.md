@@ -197,6 +197,9 @@ select * from cliente_imovel
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableCliente15.png)    
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableImovel15.png)   
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableSensor15.png)   
 	
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
