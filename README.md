@@ -51,7 +51,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
         * O protótipo deve possui no mínimo duas relações N para N
         
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/Conceitual_AntiFire.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20conceitual%20novo%20para%20botar%20no%20git.png)
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
