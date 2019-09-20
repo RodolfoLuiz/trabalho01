@@ -35,7 +35,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO? 
 
 > A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
-+ Relatório de clientes incluindo as seguintes informações: rg do cliente, nome do cliente, data de nascimento do cliente, sexo do cliente e cpf do cliente; 
++ Relatório mostrando qual é a funcionalidade que mais aparece em imóveis
 + Relatório de Incidentes ocorridos no mês: A categoria dos incidentes, a data, o imovel em que ocorreu ;
 + Relatório de tipo de imóveis que mais ocorrem incêndios incluindo as seguintes informações:  tipo do imóvel, numero de comodos e quantidade de vezes que o sistema é acionado;
 + Relatório dos pacotes mais comprados incluindo: tipo do imóvel, numero de comodos, valor do pacote, pacote mais comprado;
@@ -62,7 +62,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
     
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Calebe Carias e Davi Moura]
-    [Grupo02]: [Júlia Suzano e Beatriz Auer]
+    [Grupo02]: [Júlia Suzano]
     
     
 
