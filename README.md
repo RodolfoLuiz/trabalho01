@@ -94,7 +94,137 @@ ID: Campo que armazena o identificador dos sensores.<br>
   ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20logico%202009.png)
 
 ### 7	MODELO FÍSICO<br>
-  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/F%C3%8DSICO%2B.png)       
+
+  /* ModeloLógicoteoricamenteok: */
+
+CREATE TABLE CLIENTE (
+    nome string,
+    cpf string,
+    telefone string,
+    email string,
+    data_nasc date,
+    rg string PRIMARY KEY
+);
+
+CREATE TABLE REGISTRO (
+    data date,
+    temperatura int,
+    hora time,
+    umidade float,
+    id string PRIMARY KEY,
+    FK_IMOVEL_codigo string,
+    FK_CATEGORIA_codigo int
+);
+
+CREATE TABLE IMOVEL (
+    tipo string,
+    num_comodos int,
+    data_manutencao date,
+    codigo string PRIMARY KEY,
+    estado_id int,
+    municipio_id string,
+    bairro_id string,
+    cep string,
+    numero string,
+    FK_CLIENTE_rg string,
+    FK_SUPERVISOR_codigo int
+);
+
+CREATE TABLE SUPERVISOR (
+    salario float,
+    estado_super string,
+    codigo int PRIMARY KEY,
+    rg string,
+    FK_Estado_id int
+);
+
+CREATE TABLE CATEGORIA (
+    codigo int PRIMARY KEY,
+    tipo string
+);
+
+CREATE TABLE Estado (
+    id int PRIMARY KEY,
+    nome string
+);
+
+CREATE TABLE MUNICÍPIO (
+    id int PRIMARY KEY,
+    nome string
+);
+
+CREATE TABLE BAIRRO (
+    id int PRIMARY KEY,
+    nome string
+);
+
+CREATE TABLE Cliente_Supervisor (
+    fk_SUPERVISOR_codigo int,
+    fk_CLIENTE_rg string
+);
+
+CREATE TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO (
+    fk_Estado_id int,
+    fk_IMOVEL_codigo string,
+    fk_MUNICÍPIO_id int,
+    fk_BAIRRO_id int
+);
+ 
+ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_2
+    FOREIGN KEY (FK_IMOVEL_codigo)
+    REFERENCES IMOVEL (codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_3
+    FOREIGN KEY (FK_CATEGORIA_codigo)
+    REFERENCES CATEGORIA (codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_2
+    FOREIGN KEY (FK_CLIENTE_rg)
+    REFERENCES CLIENTE (rg)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_3
+    FOREIGN KEY (FK_SUPERVISOR_codigo)
+    REFERENCES SUPERVISOR (codigo)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE SUPERVISOR ADD CONSTRAINT FK_SUPERVISOR_2
+    FOREIGN KEY (FK_Estado_id)
+    REFERENCES Estado (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_1
+    FOREIGN KEY (fk_SUPERVISOR_codigo)
+    REFERENCES SUPERVISOR (codigo)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_2
+    FOREIGN KEY (fk_CLIENTE_rg)
+    REFERENCES CLIENTE (rg)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_1
+    FOREIGN KEY (fk_Estado_id)
+    REFERENCES Estado (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_2
+    FOREIGN KEY (fk_IMOVEL_codigo)
+    REFERENCES IMOVEL (codigo)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_3
+    FOREIGN KEY (fk_MUNICÍPIO_id)
+    REFERENCES MUNICÍPIO (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_4
+    FOREIGN KEY (fk_BAIRRO_id)
+    REFERENCES BAIRRO (id)
+    ON DELETE RESTRICT;       
+
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
