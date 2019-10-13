@@ -51,7 +51,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
         * O protótipo deve possui no mínimo duas relações N para N
         
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20Conceitual%202009.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modeloConceitual1310.png)
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
