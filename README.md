@@ -35,11 +35,11 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO? 
 
 > A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
-+ Relatório mostrando qual é a funcionalidade que mais aparece em imóveis
-+ Relatório de Incidentes ocorridos no mês: A categoria dos incidentes, a data, o imovel em que ocorreu ;
-+ Relatório de tipo de imóveis que mais ocorrem incêndios incluindo as seguintes informações:  tipo do imóvel, numero de comodos e quantidade de vezes que o sistema é acionado;
-+ Relatório dos pacotes mais comprados incluindo: tipo do imóvel, numero de comodos, valor do pacote, pacote mais comprado;
-+ Relatório do estado onde mais é vendido: estado com mais clientes, numero de clientes.
++ Relatório mostrando qual é a funcionalidade de imóvel que mais ocorrem incidentes;
++ Relatório de Incidentes ocorridos no mês: A categoria dos incidentes, a data, o imovel em que ocorreu;
++ Relatório da quantidade de lucro em cada estado;
++ Relatório sobre a causa dos incidentes que mais ocorre;
++ Relatório dos estados onde o sistema é vendido em maior quantidade.
 
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
