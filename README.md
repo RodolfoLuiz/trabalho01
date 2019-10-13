@@ -91,7 +91,7 @@ UMIDADE: Campo que armazena a umidade registrada pelos sensores durante o incide
 ID: Campo que armazena o identificador dos sensores.<br>
  
 ### 6	MODELO LÓGICO<br>
-  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modelo%20logico%202009.png)
+  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modeloL%C3%B3gico1310.png)
 
 ### 7	MODELO FÍSICO<br>
 
