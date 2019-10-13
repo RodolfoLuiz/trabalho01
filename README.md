@@ -37,7 +37,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 > A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
 + Relatório mostrando qual é a funcionalidade de imóvel que mais ocorrem incidentes;
 + Relatório de Incidentes ocorridos no mês: A categoria dos incidentes, a data, o imovel em que ocorreu;
-+ Relatório da quantidade de lucro em cada estado;
++ Relatório da quantidade de lucro em cada estado; (qual região retorna o maior lucro para os supervisores?)
 + Relatório sobre a causa dos incidentes que mais ocorre;
 + Relatório dos estados onde o sistema é vendido em maior quantidade.
 
@@ -236,28 +236,34 @@ ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_2
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
         
 
-insert into Cliente(nome, cpf, rg, telefone, email, data_nasc)
+insert into CLIENTE(nome, cpf, rg, data_nasc,)
 
-values('Jobiscleiton', '111222333-00', '11 111 111-1', '1111-1111', 'jobis@gmail.com', '01-01-1950'),
-('Gustavo', '111222333-01',  '22 222 222-2', '2222-2222', 'gustavo@gmail.com', '02-02-1987'),
-('Calebe', '111222333-02', '33 333 333-3', '3333-3333', 'cabele@hotmail.com', '10-02-1981'),
-('Pedro', '111222333-03', '44 444 444-4', '4444-4444', 'pedro@gmail.com', '19-02-1976');      
+values('Jobiscleiton', '111222333-00', '11 111 111-1','01-01-1950'),
+	('Gustavo', '111222333-01',  '22 222 222-2', '02-02-1987'),
+	('Calebe', '111222333-02', '33 333 333-3', '10-02-1981'),
+	('Pedro', '111222333-03', '44 444 444-4', '19-02-1976');      
 	   
 
-insert into Imovel(tipo, num_comodos, data_instalacao, data_manutencao, endereco, preco_pacote, codigo)
+insert into IMOVEL(tipo, num_comodos, data_manutencao, codigo, CEP)
 
-values ('Industrial', 3, '1-1-2019', '1-2-2019','ES-Serra- Rua 1A- Nº31',  '400',110),
-('Residencial',4, '2-2-2019', '2-3-2019','ES-Serra- Rua 1B- Nº45',  '300',220),
-('Comercial',  5, '3-3-2019', '3-4-2019','ES-Serra- Rua 5F- Nº86',  '600',330),
-('Comercial',  4, '4-4-2019', '4-5-2019','ES-Vitória- Rua 6A- Nº49','600',440);
+values ('Industrial', 3, '1-2-2019', 110, '11011-110'),
+	('Residencial', 4, '2-3-2019', 220, '22022-220'),
+	('Comercial',  5, '3-4-2019', 330, '33033-330'),
+	('Comercial',  4, '4-5-2019', 440, '44044-440');
 
 
-insert into Sensores(data, temperatura, hora, categoria, umidade, cod_imovel, id)
+insert into REGISTRO(data, temperatura, hora, umidade, id)
 
-values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110, 120S),
-      ('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220, 230S),
-      ('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330, 340S),
-      ('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440, 450S);
+values('1-2-2020', '22ºC', '13:30', '70', 120S),
+      ('2-3-2020', '25ºC', '12:00', '74', 230S),
+      ('3-4-2020', '23ºC', '12:30', '69', 340S),
+      ('4-5-2020', '16ºC', '18:40', '77', 450S);
+      
+insert into SUPERVISOR(codigo, rg, salario)
+	(110, '55 555 555-5', '2300.00'),
+	(220, '66 666 666-6', '4300.00'),
+	(330, '77 777 777-7', '5400.00'),
+	(440, '88 888 888-8', '2500.00'),
 	  
 
 
