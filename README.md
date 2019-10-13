@@ -95,134 +95,127 @@ ID: Campo que armazena o identificador dos sensores.<br>
 
 ### 7	MODELO FÍSICO<br>
 
-  /* ModeloLógicoteoricamenteok: */
-
 CREATE TABLE CLIENTE (
-    nome string,
-    cpf string,
-    telefone string,
-    email string,
-    data_nasc date,
-    rg string PRIMARY KEY
-);
+    Nome varchar(50),
+    CPF varchar(50),
+    Data_nasc date,
+    RG varchar(50) PRIMARY KEY);
 
 CREATE TABLE REGISTRO (
-    data date,
-    temperatura int,
-    hora time,
-    umidade float,
-    id string PRIMARY KEY,
-    FK_IMOVEL_codigo string,
-    FK_CATEGORIA_codigo int
-);
+    Data date,
+    Temperatura int,
+    Hora time,
+    Umidade float,
+    ID varchar(50) PRIMARY KEY,
+    FK_IMOVEL_Codigo varchar(50),
+    FK_CATEGORIA_Codigo int);
 
 CREATE TABLE IMOVEL (
-    tipo string,
-    num_comodos int,
-    data_manutencao date,
-    codigo string PRIMARY KEY,
-    estado_id int,
-    municipio_id string,
-    bairro_id string,
-    cep string,
-    numero string,
-    FK_CLIENTE_rg string,
-    FK_SUPERVISOR_codigo int
-);
+    Tipo varchar(50),
+    Num_Comodos int,
+    Data_Manutencao date,
+    Codigo varchar(50) PRIMARY KEY,
+    CEP varchar(50),
+    Numero varchar(50),
+    FK_CLIENTE_RG varchar(50),
+    FK_SUPERVISOR_Codigo int,
+    FK_ESTADO_ID int,
+    FK_MUNICÍPIO_ID int,
+    FK_BAIRRO_ID int);
 
 CREATE TABLE SUPERVISOR (
-    salario float,
-    estado_super string,
-    codigo int PRIMARY KEY,
-    rg string,
-    FK_Estado_id int
-);
+    Salario float,
+    RG varchar(50),
+    Codigo int PRIMARY KEY,
+    FK_ESTADO_ID int);
 
 CREATE TABLE CATEGORIA (
-    codigo int PRIMARY KEY,
-    tipo string
-);
+    Codigo int PRIMARY KEY,
+    Tipo varchar(50));
 
-CREATE TABLE Estado (
-    id int PRIMARY KEY,
-    nome string
-);
+CREATE TABLE ESTADO (
+    ID int PRIMARY KEY,
+    Nome varchar(50));
 
 CREATE TABLE MUNICÍPIO (
-    id int PRIMARY KEY,
-    nome string
-);
+    ID int PRIMARY KEY,
+    Nome varchar(50));
 
 CREATE TABLE BAIRRO (
-    id int PRIMARY KEY,
-    nome string
-);
+    ID int PRIMARY KEY,
+    Nome varchar(50));
+
+CREATE TABLE CONTATO (
+    Codigo int PRIMARY KEY,
+    FK_CLIENTE_RG varchar(50),
+    FK_TIPO_ID int);
+
+CREATE TABLE TIPO (
+    ID int PRIMARY KEY,
+    Tipo varchar(50));
 
 CREATE TABLE Cliente_Supervisor (
-    fk_SUPERVISOR_codigo int,
-    fk_CLIENTE_rg string
-);
-
-CREATE TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO (
-    fk_Estado_id int,
-    fk_IMOVEL_codigo string,
-    fk_MUNICÍPIO_id int,
-    fk_BAIRRO_id int
-);
+    fk_CLIENTE_RG varchar(50),
+    fk_SUPERVISOR_Codigo int);
  
 ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_2
-    FOREIGN KEY (FK_IMOVEL_codigo)
-    REFERENCES IMOVEL (codigo)
+    FOREIGN KEY (FK_IMOVEL_Codigo)
+    REFERENCES IMOVEL (Codigo)
     ON DELETE CASCADE;
  
 ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_3
-    FOREIGN KEY (FK_CATEGORIA_codigo)
-    REFERENCES CATEGORIA (codigo)
+    FOREIGN KEY (FK_CATEGORIA_Codigo)
+    REFERENCES CATEGORIA (Codigo)
     ON DELETE CASCADE;
  
 ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_2
-    FOREIGN KEY (FK_CLIENTE_rg)
-    REFERENCES CLIENTE (rg)
+    FOREIGN KEY (FK_CLIENTE_RG)
+    REFERENCES CLIENTE (RG)
     ON DELETE RESTRICT;
  
 ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_3
-    FOREIGN KEY (FK_SUPERVISOR_codigo)
-    REFERENCES SUPERVISOR (codigo)
+    FOREIGN KEY (FK_SUPERVISOR_Codigo)
+    REFERENCES SUPERVISOR (Codigo)
     ON DELETE RESTRICT;
  
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_4
+    FOREIGN KEY (FK_ESTADO_ID)
+    REFERENCES ESTADO (ID)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_5
+    FOREIGN KEY (FK_MUNICÍPIO_ID)
+    REFERENCES MUNICÍPIO (ID)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_6
+    FOREIGN KEY (FK_BAIRRO_ID)
+    REFERENCES BAIRRO (ID)
+    ON DELETE CASCADE;
+ 
 ALTER TABLE SUPERVISOR ADD CONSTRAINT FK_SUPERVISOR_2
-    FOREIGN KEY (FK_Estado_id)
-    REFERENCES Estado (id)
+    FOREIGN KEY (FK_ESTADO_ID)
+    REFERENCES ESTADO (ID)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE CONTATO ADD CONSTRAINT FK_CONTATO_2
+    FOREIGN KEY (FK_CLIENTE_RG)
+    REFERENCES CLIENTE (RG)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE CONTATO ADD CONSTRAINT FK_CONTATO_3
+    FOREIGN KEY (FK_TIPO_ID)
+    REFERENCES TIPO (ID)
     ON DELETE CASCADE;
  
 ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_1
-    FOREIGN KEY (fk_SUPERVISOR_codigo)
-    REFERENCES SUPERVISOR (codigo)
+    FOREIGN KEY (fk_CLIENTE_RG)
+    REFERENCES CLIENTE (RG)
     ON DELETE RESTRICT;
  
 ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_2
-    FOREIGN KEY (fk_CLIENTE_rg)
-    REFERENCES CLIENTE (rg)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_1
-    FOREIGN KEY (fk_Estado_id)
-    REFERENCES Estado (id)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_2
-    FOREIGN KEY (fk_IMOVEL_codigo)
-    REFERENCES IMOVEL (codigo)
-    ON DELETE NO ACTION;
- 
-ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_3
-    FOREIGN KEY (fk_MUNICÍPIO_id)
-    REFERENCES MUNICÍPIO (id)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO ADD CONSTRAINT FK_Está_Estado_IMOVEL_MUNICÍPIO_BAIRRO_4
-    FOREIGN KEY (fk_BAIRRO_id)
-    REFERENCES BAIRRO (id)
+    FOREIGN KEY (fk_SUPERVISOR_Codigo)
+    REFERENCES SUPERVISOR (Codigo)
     ON DELETE RESTRICT;       
 
 
