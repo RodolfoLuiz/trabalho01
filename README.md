@@ -470,9 +470,18 @@ for i in range(49):
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableCliente15.png)    
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableImovel15.png)   
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableSensor15.png)   
+
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20TIPO.png)    
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20SUPERVISOR.png)   
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20REGISTRO.png)  
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20IMOVEL.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20ESTADO.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLIENTE.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLASSE.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CATEGORIA.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20BAIRRO.png)
+
+
 	
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 	Select * from Cliente where RG = ‘867321052’ <br>
