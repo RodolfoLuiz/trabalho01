@@ -51,7 +51,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
         * O protótipo deve possui no mínimo duas relações N para N
         
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modeloConceitual1310.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/MODELO%20CONCEITUAL%202710.png)
     
     B) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
@@ -94,7 +94,6 @@ CODIGO: Campo identificador dos sensores. <br>
 
 ESTADO: Espaço onde é mostrado o Estado onde o imóvel está localizado.<br>
 BAIRRO: Espaço onde é mostrado o Bairro onde o imóvel está localizado.<br>
-MUNICÍPIO: Espaço onde é mostrado o Município onde o imóvel está localizado.<br>
 
 SUPERVISOR: Tabela que representam os Supervisores de cada imóvel, dividos em estados. <br>
 SALARIO: respectivo de cada supervisor diferente. <br>
@@ -103,7 +102,7 @@ CONTATO: maneira de entrar em contato com clientes. <br>
 TIPO: espécie do contato (rede social, telefone, e-mail, etc).<br>
  
 ### 6	MODELO LÓGICO<br>
-  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/modeloL%C3%B3gico1310.png)
+  ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/MODELO%20L%C3%93GICO%202710.png)
 
 ### 7	MODELO FÍSICO<br>
 
@@ -123,7 +122,6 @@ CREATE TABLE REGISTRO (
     FK_CATEGORIA_Codigo int);
 
 CREATE TABLE IMOVEL (
-    Tipo varchar(50),
     Num_Comodos int,
     Data_Manutencao date,
     Codigo varchar(50) PRIMARY KEY,
@@ -132,13 +130,14 @@ CREATE TABLE IMOVEL (
     FK_CLIENTE_RG varchar(50),
     FK_SUPERVISOR_Codigo int,
     FK_ESTADO_ID int,
-    FK_MUNICÍPIO_ID int,
-    FK_BAIRRO_ID int);
+    FK_BAIRRO_ID int,
+    FK_CLASSE_ID int);
 
 CREATE TABLE SUPERVISOR (
     Salario float,
     RG varchar(50),
     Codigo int PRIMARY KEY,
+    Nome varchar(50),
     FK_ESTADO_ID int);
 
 CREATE TABLE CATEGORIA (
@@ -149,20 +148,21 @@ CREATE TABLE ESTADO (
     ID int PRIMARY KEY,
     Nome varchar(50));
 
-CREATE TABLE MUNICÍPIO (
-    ID int PRIMARY KEY,
-    Nome varchar(50));
-
 CREATE TABLE BAIRRO (
     ID int PRIMARY KEY,
     Nome varchar(50));
 
 CREATE TABLE CONTATO (
     Codigo int PRIMARY KEY,
+    Contato varchar(50),
     FK_CLIENTE_RG varchar(50),
     FK_TIPO_ID int);
 
 CREATE TABLE TIPO (
+    ID int PRIMARY KEY,
+    Tipo varchar(50));
+
+CREATE TABLE CLASSE (
     ID int PRIMARY KEY,
     Tipo varchar(50));
 
@@ -196,13 +196,13 @@ ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_4
     ON DELETE CASCADE;
  
 ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_5
-    FOREIGN KEY (FK_MUNICÍPIO_ID)
-    REFERENCES MUNICÍPIO (ID)
+    FOREIGN KEY (FK_BAIRRO_ID)
+    REFERENCES BAIRRO (ID)
     ON DELETE CASCADE;
  
 ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_6
-    FOREIGN KEY (FK_BAIRRO_ID)
-    REFERENCES BAIRRO (ID)
+    FOREIGN KEY (FK_CLASSE_ID)
+    REFERENCES CLASSE (ID)
     ON DELETE CASCADE;
  
 ALTER TABLE SUPERVISOR ADD CONSTRAINT FK_SUPERVISOR_2
@@ -228,8 +228,7 @@ ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_1
 ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_2
     FOREIGN KEY (fk_SUPERVISOR_Codigo)
     REFERENCES SUPERVISOR (Codigo)
-    ON DELETE RESTRICT;       
-
+    ON DELETE RESTRICT;
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
@@ -268,71 +267,204 @@ insert into SUPERVISOR(codigo, rg, salario)
 
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
-create table Cliente(nome varchar(40), cpf varchar(25), rg varchar(25) PRIMARY KEY,telefone varchar(15), email varchar(40), data_nasc date);
 
-create table cliente_imovel(Cliente_rg varchar(40), codigo_imovel varchar(40);
+#TABELA CLIENTE - FINALIZADA
+cur = conn.cursor()
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote varchar(40), codigo varchar(40) PRIMARY KEY);
+for i in range(50):
+  i = i + 1
+  nome = fake.name()
+  Data_nasc = fake.date(pattern="%Y-%m-%d", end_datetime=None)
+  RG = fake.rg()
+  CPF = fake.cpf()
+  print(nome,CPF,Data_nasc,RG)
+  
+  insert_values = (nome,CPF,Data_nasc,RG)
+  insert_instruction = """insert into CLIENTE values (%s,%s,%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+-------------------------------------------------------------------------------------------------------------
 
-create table Sensores (data date, temperatura float, hora time, categoria varchar(40), umidade float, cod_imovel varchar(40) PRIMARY KEY, id varchar(30));
+#TABELA SUPERVISOR - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-select * from Cliente
+for i in range(50):
+  i = i + 1
+  nome = fake.name()
+  RG = fake.rg()
+  salario = fake.pyint(min_value=1000, max_value=20000, step=10)
+  codigo = i + 1
+  print(salario,RG,codigo,nome)
+  
+  insert_values = (salario,RG,codigo,nome)
+  insert_instruction = """insert into SUPERVISOR values (%s,%s,%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
 
-select * from cliente_imovel
+#TABELA IMOVEL - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-select * from Imovel
+for i in range(50):
+  i = i + 1
+  numero = fake.building_number()
+  num_comodos = fake.pyint(min_value=1, max_value=10, step=1)
+  Data_manutencao = fake.date(pattern="%Y-%m-%d", end_datetime=None)
+  codigo = i + 1
+  CEP = fake.ssn()
+  print(num_comodos, Data_manutencao, codigo, CEP, numero)
+  
+  insert_values = (num_comodos, Data_manutencao, codigo, CEP, numero)
+  insert_instruction = """insert into IMOVEL values (%s,%s,%s,%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
 
-select * from Sensores        
-        
-        
-        
-#### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-drop table Cliente
+#TABELA ESTADO - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-drop table Imovel
+for i in range(50):
+  codigo = i + 2
+  i = i + 1
+  
+  nome = fake.state()	
+  
+  print(codigo, nome)
+  
+  insert_values = (codigo, nome)
+  insert_instruction = """insert into ESTADO values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
 
-drop table Sensores
+--------------------------------------------------------------------------------------------------------------
 
-drop table cliente_imovel
+#TABELA BAIRRO - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-create table Cliente(nome varchar(40), cpf varchar(25), rg varchar(25) PRIMARY KEY,telefone varchar(15), email varchar(40), data_nasc date);
+for i in range(50):
+  i = i + 1
+  codigo = i + 1
+  nome = fake.street_address()
+  
+  print(codigo, nome)
+  
+  insert_values = (codigo, nome)
+  insert_instruction = """insert into BAIRRO values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
 
-create table Imovel(tipo varchar(40), num_comodos integer, data_instalacao date, data_manutencao date, endereco varchar(40), preco_pacote varchar(40), cod_imovel varchar(40) PRIMARY KEY);
+--------------------------------------------------------------------------------------------------------------
+  
+#TABELA CLASSE - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-create table Sensores (data date, temperatura float, hora time, categoria varchar(40), umidade float, cod_imovel varchar(40) PRIMARY KEY, id varchar(30));
+t = ["Industrial","Comercial","Residencial"]
+for i in range(49):
+  i= i + 1
+  ID = i + 1
+  
+  randomizar = random.randint(1,3)
+  tipo = t[randomizar-1]
 
-create table cliente_imovel(Cliente_rg varchar(40), codigo_imovel varchar(40);
+  print(ID,tipo)
+  
+  insert_values = (ID,tipo)
+  insert_instruction = """insert into CLASSE values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
+  
+#TABELA CONTATO - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
+t = ["twitter","telefone","instagram","e-mail","whatsapp"]
+for i in range(50):
+  codigo = i + 2
+  
+  randomizar = random.randint(1,5)
+  contat = t[randomizar-1]
 
-insert into Cliente(nome, cpf, rg, telefone, email, data_nasc)
+  print(codigo,contat)
+  
+  insert_values = (codigo,contat)
+  insert_instruction = """insert into CONTATO values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
+  
+  #TABELA REGISTRO - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-values('Jobiscleiton', '111222333-00', '11 111 111-1', '1111-1111', 'jobis@gmail.com', '01-01-1950'),
-      ('Gustavo', '111222333-01',  '22 222 222-2', '2222-2222', 'gustavo@gmail.com', '02-02-1987'),
-      ('Calebe', '111222333-02', '33 333 333-3', '3333-3333', 'cabele@hotmail.com', '10-02-1981'),
-      ('Pedro', '111222333-03', '44 444 444-4', '4444-4444', 'pedro@gmail.com', '19-02-1976');      
-	   
+for i in range(50):
+  i = i + 1
+  data = fake.date(pattern="%Y-%m-%d", end_datetime=None)
+  temperatura= fake.pyint(min_value=35, max_value=100, step=1)
+  hora = fake.time(pattern="%H:%M:%S", end_datetime=None) 
+  umidade = fake.pyint(min_value=10, max_value=100, step=1)
+  codigo = i + 1
 
-insert into Imovel(tipo, num_comodos, data_instalacao, data_manutencao, endereco, preco_pacote, cod_imovel)
+  print(data,temperatura,hora,umidade,codigo)
+  
+  insert_values = (data,temperatura,hora,umidade,codigo)
+  insert_instruction = """insert into REGISTRO values (%s,%s,%s,%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
+  
+#TABELA TIPO - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-values ('Industrial', 3, '1-1-2019', '1-2-2019','ES-Serra- Rua 1A- Nº31',  '400',110),
-       ('Residencial',4, '2-2-2019', '2-3-2019','ES-Serra- Rua 1B- Nº45',  '300',220),
-       ('Comercial',  5, '3-3-2019', '3-4-2019','ES-Serra- Rua 5F- Nº86',  '600',330),
-       ('Comercial',  4, '4-4-2019', '4-5-2019','ES-Vitória- Rua 6A- Nº49','600',440);
+t = ["twitter","telefone","instagram","email","whatsapp"]
+for i in range(50):
+  ID = i + 2
+  randomizar = random.randint(1,5)
+  tipo = t[randomizar-1]
 
+  print(ID,tipo)
+  
+  insert_values = (ID,tipo)
+  insert_instruction = """insert into TIPO values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
+  
+#TABELA CATEGORIA - FINALIZADA
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
 
-insert into Sensores(data, temperatura, hora, categoria, umidade, cod_imovel, id)
+t = ["Vazamento de gás","fiação","Gasolina","Vela derramada","Isqueiro"]
+for i in range(49):
+  i = i + 1
+  codigo = i + 1
+  
+  randomizar = random.randint(1,5)
+  tipo= t[randomizar-1]
 
-values('1-2-2020', '22ºC', '13:30', 'VAZAMENTO DE GÁS', '70', 110, 120S),
-      ('2-3-2020', '25ºC', '12:00', 'VAZAMENTO DE GÁS', '70', 220, 230S),
-      ('3-4-2020', '23ºC', '12:30', 'VAZAMENTO DE GÁS', '70', 330, 340S),
-      ('4-5-2020', '16ºC', '18:40', 'VAZAMENTO DE GÁS', '70', 440, 450S);
-	  
-select * from Cliente
-
-select * from Imovel																														 
-select * from Sensores
-
-select * from cliente_imovel
+  print(tipo,codigo)
+  
+  insert_values = (codigo,tipo)
+  insert_instruction = """insert into CATEGORIA values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
@@ -343,6 +475,11 @@ select * from cliente_imovel
 ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/printTableSensor15.png)   
 	
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+	Select * from Cliente where RG = ‘867321052’ <br>
+	Select * from Cliente where nome = ‘Breno da Luz’ <br>
+	Select * from Imovel where num_comodos = 5 <br>
+	Select * from Imovel where codigo = ‘15’ <br>
+
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
