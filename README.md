@@ -335,7 +335,7 @@ for i in range(50):
   codigo = i + 2
   i = i + 1
   
-  nome = fake.state()	
+  nome = fake.estado_nome()	
   
   print(codigo, nome)
   
@@ -353,7 +353,7 @@ fake = Factory.create('pt_BR')
 for i in range(50):
   i = i + 1
   codigo = i + 1
-  nome = fake.street_address()
+  nome = fake.bairro()
   
   print(codigo, nome)
   
@@ -369,13 +369,10 @@ cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
 t = ["Industrial","Comercial","Residencial"]
-for i in range(49):
-  i= i + 1
+for i in range(len(t)): 
   ID = i + 1
+  tipo = t[i]
   
-  randomizar = random.randint(1,3)
-  tipo = t[randomizar-1]
-
   print(ID,tipo)
   
   insert_values = (ID,tipo)
@@ -485,27 +482,44 @@ for i in range(49):
 	
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 	
-	Select * from Cliente where RG = ‘012843659’
+	Select * from Cliente where RG = ‘721364500’
 	
-	Select * from Cliente where nome = ‘Davi Lucas Lopes’
+	Select * from Cliente where nome = ‘Bernardo Campos’
 	
 	Select * from Imovel where num_comodos = 5
 	
-	Select * from Registro where temperatura = ‘40’
+	Select * from Registro where temperatura = ‘70’
 
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not:
+    	- Select * from Supervisor where salario > 5000 and salario < 8000
+    	-
+    	-
+   	-
+    	-
+    b) Criar no mínimo 3 consultas com operadores aritméticos:
+    	-
+    	-
+    	-
+    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas:
+    	-
+    	-
+    	-
+	
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+    a) Criar outras 5 consultas que envolvam like ou ilike:
+    - Select nome from Cliente where nome ilike 'A%'
+    -
+    -
+    -
+    -
+    
+    b) Criar uma consulta para cada tipo de função data apresentada:
 
 
     
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
@@ -515,12 +529,26 @@ for i in range(49):
 ### ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO SEMESTRAL (Mínimo 6 e Máximo 10)<br>
 
 
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+#### 9.7	CONSULTAS COM GROUP BY (Mínimo 6)<br>
+	-
+	-
+	-
+	-
+	-
+	-
 
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+	-
+	-
+	-
+	-
+	
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+        a) Uma junção que envolva Self Join:
+	
+        b) Outras junções com views que o grupo considere importante para o trabalho:
+
+
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 
 #### 9.11	LISTA DE CODIGOS DAS FUNÇÕES E TRIGGERS<br>
