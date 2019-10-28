@@ -484,10 +484,14 @@ for i in range(49):
 
 	
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-	Select * from Cliente where RG = ‘867321052’ <br>
-	Select * from Cliente where nome = ‘Breno da Luz’ <br>
-	Select * from Imovel where num_comodos = 5 <br>
-	Select * from Imovel where codigo = ‘15’ <br>
+	
+	Select * from Cliente where RG = ‘012843659’
+	
+	Select * from Cliente where nome = ‘Davi Lucas Lopes’
+	
+	Select * from Imovel where num_comodos = 5
+	
+	Select * from Registro where temperatura = ‘40’
 
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
