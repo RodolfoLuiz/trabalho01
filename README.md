@@ -1,4 +1,4 @@
-# TRABALHO 01:  ANTI-FIRE DETECTOR
+# TRABALHO 01:  ANTI-FIRE COMPANY
 Trabalho desenvolvido durante a disciplina de Banco de Dados do Integrado
 
 # Sumário
@@ -20,10 +20,7 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 
 ### 3.MINI-MUNDO <br>
 
-
-
 >  O projeto armazenará detalhadamente todos os tipos de incidentes (ex.: incendios, vazamentos de gás, etc) e suas respectivas informações (ex.: hórario, data, temperatura, umidade ). Serão cuidadosamente detectadas através de sensores (de temperatura, umidade, gases dispersos no ambiente) que quando registrar alguma situação crítica ou desfavorável, automaticamente acionará o sistema e comunicará os bombeiros, além de armazenar no sistema as informações do incidente, anteriormente citados. No site do projeto, você (cliente) poderá se cadastrar inserindo algumas informações pessoais(ex.: nome, cpf, rg, telefone, e-mail, data de nascimento), informações sobre seu imóvel, como a quantidade de cômodos e sua funcionalidade (residencial ou comercial) e seu endereço (para solicitar intalação e posteriormente uma manutenção), após a instalação tambem será armazenada a data de instalação.
-
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -59,13 +56,11 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
         e tuplas falsas
     
         
-    
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: [Calebe Carias e Davi Moura]
     [Grupo02]: [Júlia Suzano]
     
     
-
 #### 5.2 DESCRIÇÃO DOS DADOS
 
 CLIENTE: Tabela que armazena as informações referentes aos clientes.<br>
@@ -106,170 +101,59 @@ TIPO: espécie do contato (rede social, telefone, e-mail, etc).<br>
 
 ### 7	MODELO FÍSICO<br>
 
-CREATE TABLE CLIENTE (
-    Nome varchar(50),
-    CPF varchar(50),
-    Data_nasc date,
-    RG varchar(50) PRIMARY KEY);
+CREATE TABLE CLIENTE ( Nome varchar(50), CPF varchar(50), Data_nasc date, RG varchar(50) PRIMARY KEY);
 
-CREATE TABLE REGISTRO (
-    Data date,
-    Temperatura int,
-    Hora time,
-    Umidade float,
-    ID varchar(50) PRIMARY KEY,
-    FK_IMOVEL_Codigo varchar(50),
-    FK_CATEGORIA_Codigo int);
+CREATE TABLE REGISTRO ( Data date, Temperatura int, Hora time, Umidade float, ID varchar(50) PRIMARY KEY, FK_IMOVEL_Codigo varchar(50), FK_CATEGORIA_Codigo int);
 
-CREATE TABLE IMOVEL (
-    Num_Comodos int,
-    Data_Manutencao date,
-    Codigo varchar(50) PRIMARY KEY,
-    CEP varchar(50),
-    Numero varchar(50),
-    FK_CLIENTE_RG varchar(50),
-    FK_SUPERVISOR_Codigo int,
-    FK_ESTADO_ID int,
-    FK_BAIRRO_ID int,
-    FK_CLASSE_ID int);
+CREATE TABLE IMOVEL ( Num_Comodos int, Data_Manutencao date, Codigo varchar(50) PRIMARY KEY, CEP varchar(50), Numero varchar(50), FK_CLIENTE_RG varchar(50), FK_SUPERVISOR_Codigo int, FK_ESTADO_ID int, FK_BAIRRO_ID int, FK_CLASSE_ID int);
 
-CREATE TABLE SUPERVISOR (
-    Salario float,
-    RG varchar(50),
-    Codigo int PRIMARY KEY,
-    Nome varchar(50),
-    FK_ESTADO_ID int);
+CREATE TABLE SUPERVISOR ( Salario float, RG varchar(50), Codigo int PRIMARY KEY, Nome varchar(50), FK_ESTADO_ID int);
 
-CREATE TABLE CATEGORIA (
-    Codigo int PRIMARY KEY,
-    Tipo varchar(50));
+CREATE TABLE CATEGORIA ( Codigo int PRIMARY KEY, Tipo varchar(50));
 
-CREATE TABLE ESTADO (
-    ID int PRIMARY KEY,
-    Nome varchar(50));
+CREATE TABLE ESTADO ( ID int PRIMARY KEY, Nome varchar(50));
 
-CREATE TABLE BAIRRO (
-    ID int PRIMARY KEY,
-    Nome varchar(50));
+CREATE TABLE BAIRRO ( ID int PRIMARY KEY, Nome varchar(50));
 
-CREATE TABLE CONTATO (
-    Codigo int PRIMARY KEY,
-    Contato varchar(50),
-    FK_CLIENTE_RG varchar(50),
-    FK_TIPO_ID int);
+CREATE TABLE CONTATO ( Codigo int PRIMARY KEY, Contato varchar(50), FK_CLIENTE_RG varchar(50), FK_TIPO_ID int);
 
-CREATE TABLE TIPO (
-    ID int PRIMARY KEY,
-    Tipo varchar(50));
+CREATE TABLE TIPO ( ID int PRIMARY KEY, Tipo varchar(50));
 
-CREATE TABLE CLASSE (
-    ID int PRIMARY KEY,
-    Tipo varchar(50));
+CREATE TABLE CLASSE ( ID int PRIMARY KEY, Tipo varchar(50));
 
-CREATE TABLE Cliente_Supervisor (
-    fk_CLIENTE_RG varchar(50),
-    fk_SUPERVISOR_Codigo int);
- 
-ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_2
-    FOREIGN KEY (FK_IMOVEL_Codigo)
-    REFERENCES IMOVEL (Codigo)
-    ON DELETE CASCADE;
- 
-ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_3
-    FOREIGN KEY (FK_CATEGORIA_Codigo)
-    REFERENCES CATEGORIA (Codigo)
-    ON DELETE CASCADE;
- 
-ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_2
-    FOREIGN KEY (FK_CLIENTE_RG)
-    REFERENCES CLIENTE (RG)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_3
-    FOREIGN KEY (FK_SUPERVISOR_Codigo)
-    REFERENCES SUPERVISOR (Codigo)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_4
-    FOREIGN KEY (FK_ESTADO_ID)
-    REFERENCES ESTADO (ID)
-    ON DELETE CASCADE;
- 
-ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_5
-    FOREIGN KEY (FK_BAIRRO_ID)
-    REFERENCES BAIRRO (ID)
-    ON DELETE CASCADE;
- 
-ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_6
-    FOREIGN KEY (FK_CLASSE_ID)
-    REFERENCES CLASSE (ID)
-    ON DELETE CASCADE;
- 
-ALTER TABLE SUPERVISOR ADD CONSTRAINT FK_SUPERVISOR_2
-    FOREIGN KEY (FK_ESTADO_ID)
-    REFERENCES ESTADO (ID)
-    ON DELETE CASCADE;
- 
-ALTER TABLE CONTATO ADD CONSTRAINT FK_CONTATO_2
-    FOREIGN KEY (FK_CLIENTE_RG)
-    REFERENCES CLIENTE (RG)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE CONTATO ADD CONSTRAINT FK_CONTATO_3
-    FOREIGN KEY (FK_TIPO_ID)
-    REFERENCES TIPO (ID)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_1
-    FOREIGN KEY (fk_CLIENTE_RG)
-    REFERENCES CLIENTE (RG)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_2
-    FOREIGN KEY (fk_SUPERVISOR_Codigo)
-    REFERENCES SUPERVISOR (Codigo)
-    ON DELETE RESTRICT;
+CREATE TABLE Cliente_Supervisor ( fk_CLIENTE_RG varchar(50), fk_SUPERVISOR_Codigo int );
+
+ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_2 FOREIGN KEY (FK_IMOVEL_Codigo) REFERENCES IMOVEL (Codigo) ON DELETE CASCADE;
+
+ALTER TABLE REGISTRO ADD CONSTRAINT FK_REGISTRO_3 FOREIGN KEY (FK_CATEGORIA_Codigo) REFERENCES CATEGORIA (Codigo) ON DELETE CASCADE;
+
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_2 FOREIGN KEY (FK_CLIENTE_RG) REFERENCES CLIENTE (RG) ON DELETE RESTRICT;
+
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_3 FOREIGN KEY (FK_SUPERVISOR_Codigo) REFERENCES SUPERVISOR (Codigo) ON DELETE RESTRICT;
+
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_4 FOREIGN KEY (FK_ESTADO_ID) REFERENCES ESTADO (ID) ON DELETE CASCADE;
+
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_5 FOREIGN KEY (FK_BAIRRO_ID) REFERENCES BAIRRO (ID) ON DELETE CASCADE;
+
+ALTER TABLE IMOVEL ADD CONSTRAINT FK_IMOVEL_6 FOREIGN KEY (FK_CLASSE_ID) REFERENCES CLASSE (ID) ON DELETE CASCADE;
+
+ALTER TABLE SUPERVISOR ADD CONSTRAINT FK_SUPERVISOR_2 FOREIGN KEY (FK_ESTADO_ID) REFERENCES ESTADO (ID) ON DELETE CASCADE;
+
+ALTER TABLE CONTATO ADD CONSTRAINT FK_CONTATO_2 FOREIGN KEY (FK_CLIENTE_RG) REFERENCES CLIENTE (RG) ON DELETE RESTRICT;
+
+ALTER TABLE CONTATO ADD CONSTRAINT FK_CONTATO_3 FOREIGN KEY (FK_TIPO_ID) REFERENCES TIPO (ID) ON DELETE CASCADE;
+
+ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_1 FOREIGN KEY (fk_CLIENTE_RG) REFERENCES CLIENTE (RG) ON DELETE RESTRICT;
+
+ALTER TABLE Cliente_Supervisor ADD CONSTRAINT FK_Cliente_Supervisor_2 FOREIGN KEY (fk_SUPERVISOR_Codigo) REFERENCES SUPERVISOR (Codigo) ON DELETE RESTRICT;
+
+ALTER TABLE Cliente_Supervisor ADD CONSTRAINT PK_Cliente_Supervisor PRIMARY KEY (fk_CLIENTE_RG,fk_SUPERVISOR_Codigo);
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-#### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        
 
-insert into CLIENTE(nome, cpf, rg, data_nasc,)
+#TABELA CLIENTE - FINAL
 
-values('Jobiscleiton', '111222333-00', '11 111 111-1','01-01-1950'),
-	('Gustavo', '111222333-01',  '22 222 222-2', '02-02-1987'),
-	('Calebe', '111222333-02', '33 333 333-3', '10-02-1981'),
-	('Pedro', '111222333-03', '44 444 444-4', '19-02-1976');      
-	   
-
-insert into IMOVEL(tipo, num_comodos, data_manutencao, codigo, CEP)
-
-values ('Industrial', 3, '1-2-2019', 110, '11011-110'),
-	('Residencial', 4, '2-3-2019', 220, '22022-220'),
-	('Comercial',  5, '3-4-2019', 330, '33033-330'),
-	('Comercial',  4, '4-5-2019', 440, '44044-440');
-
-
-insert into REGISTRO(data, temperatura, hora, umidade, id)
-
-values('1-2-2020', '22ºC', '13:30', '70', 120S),
-      ('2-3-2020', '25ºC', '12:00', '74', 230S),
-      ('3-4-2020', '23ºC', '12:30', '69', 340S),
-      ('4-5-2020', '16ºC', '18:40', '77', 450S);
-      
-insert into SUPERVISOR(codigo, rg, salario)
-	(110, '55 555 555-5', '2300.00'),
-	(220, '66 666 666-6', '4300.00'),
-	(330, '77 777 777-7', '5400.00'),
-	(440, '88 888 888-8', '2500.00'),
-	  
-
-
-#### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
-
-#TABELA CLIENTE - FINALIZADA
-cur = conn.cursor()
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
@@ -279,7 +163,6 @@ for i in range(50):
   Data_nasc = fake.date(pattern="%Y-%m-%d", end_datetime=None)
   RG = fake.rg()
   CPF = fake.cpf()
-  print(nome,CPF,Data_nasc,RG)
   
   insert_values = (nome,CPF,Data_nasc,RG)
   insert_instruction = """insert into CLIENTE values (%s,%s,%s,%s)"""
@@ -288,46 +171,55 @@ for i in range(50):
   
 -------------------------------------------------------------------------------------------------------------
 
-#TABELA SUPERVISOR - FINALIZADA
+#TABELA SUPERVISOR - FINAL
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
 for i in range(50):
-  i = i + 1
   nome = fake.name()
   RG = fake.rg()
   salario = fake.pyint(min_value=1000, max_value=20000, step=10)
   codigo = i + 1
-  print(salario,RG,codigo,nome)
   
-  insert_values = (salario,RG,codigo,nome)
-  insert_instruction = """insert into SUPERVISOR values (%s,%s,%s,%s)"""
+  FK_ESTADO_ID = random.randint(2,51)
+  
+  insert_values = (salario,RG,codigo,nome,FK_ESTADO_ID)
+  insert_instruction = """insert into SUPERVISOR values (%s,%s,%s,%s,%s)"""
   cur.execute(insert_instruction, insert_values)
   cur.execute("commit")
   
 --------------------------------------------------------------------------------------------------------------
 
-#TABELA IMOVEL - FINALIZADA
+#TABELA IMÓVEL COMPLETA
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
 for i in range(50):
-  i = i + 1
   numero = fake.building_number()
   num_comodos = fake.pyint(min_value=1, max_value=10, step=1)
   Data_manutencao = fake.date(pattern="%Y-%m-%d", end_datetime=None)
   codigo = i + 1
   CEP = fake.ssn()
-  print(num_comodos, Data_manutencao, codigo, CEP, numero)
+
+  sorteio = random.randint(1,50)
+  FK_CLIENTE_RG = Cliente_Supervisor[sorteio][0]
+  FK_SUPERVISOR_Codigo = Cliente_Supervisor[sorteio][1]
+  FK_ESTADO_ID = random.randint(2,51)
+  FK_BAIRRO_ID = random.randint(2,51)
+  FK_CLASSE_ID = random.randint(1,3)
   
-  insert_values = (num_comodos, Data_manutencao, codigo, CEP, numero)
-  insert_instruction = """insert into IMOVEL values (%s,%s,%s,%s,%s)"""
+  insert_values =(num_comodos,Data_manutencao,codigo,CEP,numero,FK_CLIENTE_RG,FK_SUPERVISOR_Codigo,FK_ESTADO_ID,FK_BAIRRO_ID,
+  FK_CLASSE_ID)
+  insert_instruction = """insert into IMOVEL values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
   cur.execute(insert_instruction, insert_values)
   cur.execute("commit")
   
 --------------------------------------------------------------------------------------------------------------
 
 #TABELA ESTADO - FINALIZADA
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
@@ -337,8 +229,6 @@ for i in range(50):
   
   nome = fake.estado_nome()	
   
-  print(codigo, nome)
-  
   insert_values = (codigo, nome)
   insert_instruction = """insert into ESTADO values (%s,%s)"""
   cur.execute(insert_instruction, insert_values)
@@ -347,6 +237,7 @@ for i in range(50):
 --------------------------------------------------------------------------------------------------------------
 
 #TABELA BAIRRO - FINALIZADA
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
@@ -354,8 +245,6 @@ for i in range(50):
   i = i + 1
   codigo = i + 1
   nome = fake.bairro()
-  
-  print(codigo, nome)
   
   insert_values = (codigo, nome)
   insert_instruction = """insert into BAIRRO values (%s,%s)"""
@@ -373,8 +262,6 @@ for i in range(len(t)):
   ID = i + 1
   tipo = t[i]
   
-  print(ID,tipo)
-  
   insert_values = (ID,tipo)
   insert_instruction = """insert into CLASSE values (%s,%s)"""
   cur.execute(insert_instruction, insert_values)
@@ -382,9 +269,15 @@ for i in range(len(t)):
   
 --------------------------------------------------------------------------------------------------------------
   
-#TABELA CONTATO - FINALIZADA
+#TABELA CONTATO - FINAL
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
+
+select_instruction_Cliente = """select * from Cliente limit 30"""
+
+cur.execute(select_instruction_Cliente)
+clientes = cur.fetchall()
 
 t = ["twitter","telefone","instagram","e-mail","whatsapp"]
 for i in range(50):
@@ -393,16 +286,18 @@ for i in range(50):
   randomizar = random.randint(1,5)
   contat = t[randomizar-1]
 
-  print(codigo,contat)
+  FK_CLIENTE_RG = clientes[random.randint(0,29)][3]
+  FK_TIPO_ID = random.randint(1,5)
   
-  insert_values = (codigo,contat)
-  insert_instruction = """insert into CONTATO values (%s,%s)"""
+  insert_values = (codigo,contat,FK_CLIENTE_RG,FK_TIPO_ID)
+  insert_instruction = """insert into CONTATO values (%s,%s,%s,%s)"""
   cur.execute(insert_instruction, insert_values)
   cur.execute("commit")
   
 --------------------------------------------------------------------------------------------------------------
   
-  #TABELA REGISTRO - FINALIZADA
+#TABELA REGISTRO - FINAL
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
@@ -412,28 +307,27 @@ for i in range(50):
   temperatura= fake.pyint(min_value=35, max_value=100, step=1)
   hora = fake.time(pattern="%H:%M:%S", end_datetime=None) 
   umidade = fake.pyint(min_value=10, max_value=100, step=1)
-  codigo = i + 1
+  ID = i + 1
 
-  print(data,temperatura,hora,umidade,codigo)
-  
-  insert_values = (data,temperatura,hora,umidade,codigo)
-  insert_instruction = """insert into REGISTRO values (%s,%s,%s,%s,%s)"""
+  FK_IMOVEL_Codigo = random.randint(1,50)
+  FK_CATEGORIA_Codigo = random.randint(1,10)
+
+  insert_values = (data,temperatura,hora,umidade,ID,FK_IMOVEL_Codigo,FK_CATEGORIA_Codigo)
+  insert_instruction = """insert into REGISTRO values (%s,%s,%s,%s,%s,%s,%s)"""
   cur.execute(insert_instruction, insert_values)
   cur.execute("commit")
   
 --------------------------------------------------------------------------------------------------------------
   
 #TABELA TIPO - FINALIZADA
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
-t = ["twitter","telefone","instagram","email","whatsapp"]
-for i in range(50):
-  ID = i + 2
-  randomizar = random.randint(1,5)
-  tipo = t[randomizar-1]
-
-  print(ID,tipo)
+t = ["Twitter","Telefone","Instagram","E-mail","Whatsapp"]
+for i in range(len(t)):
+  ID = i + 1
+  tipo = t[i]
   
   insert_values = (ID,tipo)
   insert_instruction = """insert into TIPO values (%s,%s)"""
@@ -442,30 +336,49 @@ for i in range(50):
   
 --------------------------------------------------------------------------------------------------------------
   
-#TABELA CATEGORIA - FINALIZADA
+#TABELA CATEGORIA - FINAL
+
 cur.execute("start transaction")
 fake = Factory.create('pt_BR')
 
-t = ["Vazamento de gás","fiação","Gasolina","Vela derramada","Isqueiro"]
-for i in range(49):
-  i = i + 1
-  codigo = i + 1
+t = ["Vazamento de gás","Vasilhames de Líquidos Inflamáveis Abertos","Chama exposta","Curto circuito","Fusíveis e dijuntores", "Centelha ou Faísca", "Superaquecimento", "Combustão Espontanea","Fenômenos naturais e atmosféricos", "Convergência Luminosa"]
+for i in range(len(t)):
+  cod = i + 1
+  tipo= t[i]
   
-  randomizar = random.randint(1,5)
-  tipo= t[randomizar-1]
-
-  print(tipo,codigo)
-  
-  insert_values = (codigo,tipo)
+  insert_values = (cod,tipo)
   insert_instruction = """insert into CATEGORIA values (%s,%s)"""
   cur.execute(insert_instruction, insert_values)
   cur.execute("commit")
   
 --------------------------------------------------------------------------------------------------------------
 
+#TABELA CLIENTE_SUPERVISOR
+
+cur.execute("start transaction")
+fake = Factory.create('pt_BR')
+
+select_instruction_Cliente = """select rg,nome from Cliente"""
+select_instruction_Supervisor = """select codigo,nome from Supervisor"""
+cur.execute(select_instruction_Cliente)
+clientes = cur.fetchall()
+cur.execute(select_instruction_Supervisor)
+supervisores = cur.fetchall()
+
+for i in range(30):
+  print('Cliente:',clientes[random.randint(1,50)][3])
+  print('Supervisor:',supervisores[random.randint(1,50)][2])
+  fk_CLIENTE_RG = clientes[random.randint(0,29)][3]
+  fk_SUPERVISOR_Codigo = supervisores[random.randint(0,29)][2]
+  insert_values = (fk_CLIENTE_RG,fk_SUPERVISOR_Codigo)
+  insert_instruction = """insert into cliente_supervisor (fk_CLIENTE_RG,fk_SUPERVISOR_Codigo) values (%s,%s)"""
+  cur.execute(insert_instruction, insert_values)
+  cur.execute("commit")
+  
+--------------------------------------------------------------------------------------------------------------
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
+    OBS: Incluir para cada tópico as instruções SQL + print mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
 ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20TIPO.png)    
