@@ -381,35 +381,32 @@ for i in range(30):
     OBS: Incluir para cada tópico as instruções SQL + print mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20TIPO.png)    
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLIENTE.png)    
 ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20SUPERVISOR.png)   
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20REGISTRO.png)  
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20IMOVEL.png)
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20ESTADO.png)
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLIENTE.png)
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLASSE.png)
-![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CATEGORIA.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20ESTADO.png)  
 ![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20BAIRRO.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20IMOVEL.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CONTATO.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20REGISTRO.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20TIPO.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CATEGORIA.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLASSE.png)
+![Alt text](https://github.com/RodolfoLuiz/trabalho01/blob/master/PRINT%20TABELA%20CLIENTE_SUPERVISOR.png)
 
 
-	
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 	
-	Select * from Cliente where RG = ‘721364500’
-	
-	Select * from Cliente where nome = ‘Bernardo Campos’
-	
-	Select * from Imovel where num_comodos = 5
-	
-	Select * from Registro where temperatura = ‘70’
-
+	-Select * from Imovel where fk_cliente_rg = '841320767'
+	-Select * from Cliente where nome = ‘João Guilherme Nunes’
+	-Select * from Imovel where numero = '3'
+	-Select * from Registro where temperatura = ‘40’
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not:
     	- Select * from Supervisor where salario > 5000 and salario < 8000
-    	-
-    	-
-   	-
+    	- Select * from Imovel where num_comodos >= 3 and num_comodos <= 5
+    	- Select * from cliente where Data_nasc > '1990-01-01' or cpf = '974.283.015-05'
+   	- 
     	-
     b) Criar no mínimo 3 consultas com operadores aritméticos:
     	-
@@ -439,9 +436,6 @@ for i in range(30):
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
         
 
-### ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO SEMESTRAL (Mínimo 6 e Máximo 10)<br>
-
-
 #### 9.7	CONSULTAS COM GROUP BY (Mínimo 6)<br>
 	-
 	-
@@ -458,11 +452,19 @@ for i in range(30):
 	
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join:
+	-
 	
         b) Outras junções com views que o grupo considere importante para o trabalho:
-
+	- create view nome_e_rg_supervisor as select nome,rg from supervisor;
+	- create view nome_e_rg_cliente as select nome,rg from cliente;
+	- 
+	-
+	-
 
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
+	-
+	-
+	-
 
 #### 9.11	LISTA DE CODIGOS DAS FUNÇÕES E TRIGGERS<br>
         Detalhamento sobre funcionalidade de cada código.
