@@ -433,9 +433,16 @@ for i in range(30):
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
         a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
+	-
+	
+	
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+	- select tipo from classe inner join imovel on (classe.id = imovel.fk_classe_id )  order by classe ASC
+	-
+	-
+	-
+	-
         
-
 #### 9.7	CONSULTAS COM GROUP BY (Mínimo 6)<br>
 	-
 	-
