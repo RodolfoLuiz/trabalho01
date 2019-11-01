@@ -437,9 +437,9 @@ for i in range(30):
 	
 	
         b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
-	- select tipo from classe inner join imovel on (classe.id = imovel.fk_classe_id )  order by classe ASC
-	-
-	-
+	- select tipo,numero,codigo from classe inner join imovel on (classe.id = imovel.fk_classe_id )  order by classe ASC
+	- select numero,estado from imovel inner join estado on (estado.id = imovel.fk_estado_id ) 
+	- select numero,bairro from imovel inner join bairro on (bairro.id = imovel.fk_bairro_id )
 	-
 	-
         
