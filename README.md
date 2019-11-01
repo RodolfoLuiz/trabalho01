@@ -406,24 +406,24 @@ for i in range(30):
     	- Select * from Supervisor where salario > 5000 and salario < 8000
     	- Select * from Imovel where num_comodos >= 3 and num_comodos <= 5
     	- Select * from cliente where Data_nasc > '1990-01-01' or cpf = '974.283.015-05'
-   	- 
-    	-
+   	- Select * from contato where codigo >= 20 and codigo <= 30 
+    	- Select 
     b) Criar no mínimo 3 consultas com operadores aritméticos:
-    	-
+    	- 
     	-
     	-
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas:
-    	-
-    	-
-    	-
+    	- Select codigo, contato as como_entrar_em_contato from contato 
+    	- Select rg,cpf,nome as nome_do_cliente from cliente
+    	- Select id,hora as hora_registrada, data as data_registrada from registro
 	
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike:
     - Select nome from Cliente where nome ilike 'A%'
-    -
-    -
-    -
-    -
+    - Select * from bairro where nome ilike 'Vila%'
+    - Select * from estado where nome ilike 'P%' order by nome ASC
+    - Select * from contato where fk_cliente_rg ilike '5%'
+    - Select * from contato where contato ilike 'W%'
     
     b) Criar uma consulta para cada tipo de função data apresentada:
 
@@ -440,8 +440,8 @@ for i in range(30):
 	- select tipo,numero,codigo from classe inner join imovel on (classe.id = imovel.fk_classe_id )  order by classe ASC
 	- select numero,estado from imovel inner join estado on (estado.id = imovel.fk_estado_id ) 
 	- select numero,bairro from imovel inner join bairro on (bairro.id = imovel.fk_bairro_id )
-	-
-	-
+	- select numero,cep,tipo from imovel inner join classe on (classe.id = imovel.fk_classe_id) 
+	- select numero,cep,tipo from imovel inner join categoria on (categoria.codigo = imovel.fk_classe_id)
         
 #### 9.7	CONSULTAS COM GROUP BY (Mínimo 6)<br>
 	-
@@ -452,10 +452,10 @@ for i in range(30):
 	-
 
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-	-
-	-
-	-
-	-
+	- select classe.id, classe.tipo, imovel.codigo from Classe left outer join Imovel on (classe.id = imovel.fk_classe_id)order by tipo ASC
+	- select estado.id, estado.nome, imovel.codigo from Estado left outer join Imovel on (estado.id = imovel.fk_estado_id)order by nome ASC
+	- select bairro.id, bairro.nome, imovel.codigo from Bairro left outer join Imovel on (bairro.id = imovel.fk_bairro_id)order by nome ASC
+	- select tipo.id, tipo.tipo, contato.codigo from Tipo left outer join Contato on (tipo.id = contato.fk_tipo_id)order by tipo ASC
 	
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join:
