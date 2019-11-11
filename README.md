@@ -424,15 +424,15 @@ for i in range(30):
     - Select * from estado where nome ilike 'P%' order by nome ASC
     - Select * from contato where fk_cliente_rg ilike '5%'
     - Select * from contato where contato ilike 'W%'
-    -
-    -
-    -
-    -
+    - Select nome from Cliente where nome ilike '%B%'
+    - Select nome from Cliente where nome ilike '%S'
+    - Select * from contato where contato ilike 't%'
+    - Select * from contato where contato ilike 'w%'
     
     b) Criar uma consulta para cada tipo de função data apresentada:
-    - 
-    -
-    -
+    - Select * from cliente where data_nasc = '1980-06-04'
+    - Select * from registro where data = '2002-07-26'
+    - Select * from registro where data = '2002-07-26'
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
 	update Cliente set nome = 'Gustavo Olmo' where nome = 'Dra. Rafaela Duarte';
@@ -480,9 +480,9 @@ for i in range(30):
         b) Outras junções com views que o grupo considere importante para o trabalho:
 	- create view nome_e_rg_supervisor as select nome,rg from supervisor;
 	- create view nome_e_rg_cliente as select nome,rg from cliente;
-	- 
-	-
-	-
+	- create view temp_hora_fk_imovel as select temperatura,hora,fk_imovel_codigo from Registro;
+	- create view tipo_contato_id as select id,tipo from tipo;
+	- create view contato_cliente_rg as select fk_cliente_rg,contato from contato;
 
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
 	-
