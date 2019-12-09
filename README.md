@@ -32,10 +32,10 @@ Acreditamos que essa ideia seja uma maneira de inovar a segurança das pessoas a
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO? 
 
 > A Empresa Anti-Fire Company precisa inicialmente dos seguintes relatórios:
-+ Relatório mostrando qual é a funcionalidade de imóvel que mais ocorrem incidentes;
-+ Relatório de Incidentes ocorridos no mês: A categoria dos incidentes, a data, o imovel em que ocorreu;
++ Relatório mostrando qual é o tipo de imóvel que mais ocorrem incidentes;
++ Relatório de Incidentes mais comuns nos imóveis;
 + Relatório da quantidade de lucro em cada estado; (qual região retorna o maior lucro para os supervisores?)
-+ Relatório sobre a causa dos incidentes que mais ocorre;
++ Relatório sobre a quantidade de imóveis em cada região do país;
 + Relatório dos estados onde o sistema é vendido em maior quantidade.
 
 
@@ -474,10 +474,7 @@ for i in range(30):
 	- select tipo.id, tipo.tipo, contato.codigo from Tipo left outer join Contato on (tipo.id = contato.fk_tipo_id)order by tipo ASC
 	
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join:
-	-
-	
-        b) Outras junções com views que o grupo considere importante para o trabalho:
+	a) Junções com views que o grupo considere importante para o trabalho:
 	- create view nome_e_rg_supervisor as select nome,rg from supervisor;
 	- create view nome_e_rg_cliente as select nome,rg from cliente;
 	- create view temp_hora_fk_imovel as select temperatura,hora,fk_imovel_codigo from Registro;
@@ -485,7 +482,11 @@ for i in range(30):
 	- create view contato_cliente_rg as select fk_cliente_rg,contato from contato;
 
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
-	-
+	- SELECT IMOVEL.Codigo, CLASSE.Tipo, CATEGORIA.Tipo, REGISTRO.Data, REGISTRO.Temperatura FROM IMOVEL
+	INNER JOIN CLASSE ON (IMOVEL.FK_CLASSE_ID = CLASSE.ID)
+	INNER JOIN REGISTRO ON (IMOVEL.Codigo = REGISTRO.FK_IMOVEL_Codigo)
+	INNER JOIN CATEGORIA ON (REGISTRO.FK_CATEGORIA_Codigo = CATEGORIA.Codigo) WHERE CATEGORIA.Tipo IN (SELECT Tipo FROM CATEGORIA 		WHERE Tipo <> 'Residencial');
+
 	-
 	-
 
